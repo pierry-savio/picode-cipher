@@ -1,0 +1,29 @@
+// ===== Base =====
+$bg:            #0a0a0f;  // fundo principal
+$surface:       #13131b;  // painéis, cards
+$surface-2:     #1a1a24;  // cards secundários (ex: callout da PID)
+$line:          #26262f;  // bordas, divisórias
+
+// ===== Texto =====
+$text:          #eceaf2;  // texto principal
+$muted:         #8b8997;  // texto secundário
+$muted-2:       #5e5c69;  // texto terciário / placeholders
+
+// ===== Acentos =====
+$magenta:       #ff2db0;  // ação "encode", CTA primário
+$magenta-dim:   #7a1962;  // variante escura do magenta (hover/fundo)
+$cyan:          #28e0d6;  // ação "decode", status online
+
+// ===== Sólidas auxiliares =====
+$white:         #fff;     // texto sobre botão primário
+$cyan-dark:     #06201d;  // texto sobre botão ciano no hover
+
+// ===== Transparências (derivadas) =====
+$magenta-08:    rgba(255, 45, 176, 0.08); // fundo sutil de botão/callout magenta
+$magenta-25:    rgba(255, 45, 176, 0.25); // borda do item de nav ativo
+$magenta-50:    rgba(255, 45, 176, 0.5);  // sombra padrão do botão primário
+$magenta-60:    rgba(255, 45, 176, 0.6);  // sombra hover do botão "run" magenta
+$magenta-65:    rgba(255, 45, 176, 0.65); // sombra hover do botão primário
+
+$cyan-05:       rgba(40, 224, 214, 0.05); // glow ambiente de fundo (radial gradient)
+$cyan-08:       rgba(40, 224, 214, 0.08); // fundo sutil de botão ciano

@@ -1,0 +1,15 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+// ===== IMPORTS =====
+@import 'colors';
+@import 'functions';
+//Sections
+@import './sections/hero';
+@import './sections/encoder';
+@import './sections/decoder';
+@import './sections/generate_pid';
+@import './sections/dev';
