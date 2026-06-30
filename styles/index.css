@@ -1,9 +1,242 @@
+@charset "UTF-8";
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
-header nav img {
-  width: 40px;
-}/*# sourceMappingURL=index.css.map */
+header.header-mobile {
+  font-family: "Space Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+}
+header.header-mobile nav div.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 25px 18px 25px;
+  border-bottom: 1px solid #26262f;
+  background-color: #0a0a0f;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+}
+header.header-mobile nav div.header-container div.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+header.header-mobile nav div.header-container div.icon-container img {
+  width: 35px;
+  height: 35px;
+}
+header.header-mobile nav div.header-container div.icon-container h1 {
+  color: white;
+  font-size: 22px;
+}
+header.header-mobile nav div.header-container img.menu-icon {
+  transform: rotate(90deg);
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+header.header-mobile nav div.header-container img.menu-icon.closed {
+  transform: rotate(0deg);
+}
+header.header-mobile nav ul.mobile-menu {
+  position: fixed;
+  z-index: 998;
+  width: 100%;
+  left: 0;
+  top: 0;
+  transform: translateY(71px);
+}
+header.header-mobile nav ul.mobile-menu a {
+  list-style: none;
+  font-style: none;
+  text-decoration: none;
+}
+header.header-mobile nav ul.mobile-menu a li {
+  padding: 12px 25px 12px 25px;
+  background-color: #1a1a24;
+  color: #8b8997;
+  border: 1px solid #26262f;
+  transition: 0.2s ease;
+}
+header.header-mobile nav ul.mobile-menu a li:hover {
+  color: white;
+}
+header.header-mobile nav ul.mobile-menu a li:active {
+  background-color: rgba(122, 25, 98, 0.08);
+  border: 1px solid rgb(255, 45, 176);
+  color: #ff2db0;
+}
+header.header-mobile nav ul.mobile-menu {
+  transition: 0.5s ease;
+}
+header.header-mobile nav ul.mobile-menu.closed {
+  transform: translateY(-154px);
+}
+@media (min-width: 1200px) {
+  header.header-mobile {
+    display: none;
+  }
+}
+
+header.header-pc {
+  border-right: 1px solid #26262f;
+  width: 250px;
+  height: 100vh;
+  background-color: #0a0a0f;
+  padding: 20px;
+}
+header.header-pc nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: left;
+  height: 100%;
+}
+header.header-pc nav div.header-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  gap: 40px;
+}
+header.header-pc nav div.header-container div.icon-container {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 10px;
+}
+header.header-pc nav div.header-container div.icon-container img {
+  width: 30px;
+}
+header.header-pc nav div.header-container div.icon-container h1 {
+  font-size: 24px;
+  color: white;
+  font-weight: 500;
+  font-family: "Space Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+}
+header.header-pc nav div.header-container ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+header.header-pc nav div.header-container ul a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-radius: 8px;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  list-style: none;
+  font-style: none;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: 0.3s ease;
+}
+header.header-pc nav div.header-container ul a li.ul-item {
+  color: #8b8997;
+  font-size: 15px;
+  transition: 0.2s ease;
+  font-weight: 600;
+}
+header.header-pc nav div.header-container ul a li.ul-item:hover {
+  color: white;
+}
+header.header-pc nav div.header-container ul a li.ul-mark {
+  font-size: 10px;
+  font-family: "JetBrains Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  color: #8b8997;
+}
+header.header-pc nav div.header-container ul a:hover {
+  background-color: #13131b;
+}
+header.header-pc nav div.header-container ul a:hover li {
+  color: white;
+}
+header.header-pc nav div.header-container ul a:active {
+  background-color: rgba(255, 45, 176, 0.08);
+  border: 1px solid #ff2db0;
+}
+header.header-pc nav div.header-container ul a:active li {
+  color: #ff2db0;
+}
+header.header-pc nav div.version-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #26262f;
+  padding-top: 14px;
+}
+header.header-pc nav div.version-container p {
+  font-family: "JetBrains Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  color: #8b8997;
+  font-size: 12px;
+}
+@media (max-width: 1200px) {
+  header.header-pc {
+    display: none;
+  }
+}
+
+/*
+
+<header class="header-pc">
+    <nav>
+        <div class="header-container">
+            <div class="icon-container">
+                <img src="./img/icons/favicon.png" alt="Picode">
+                <h1>Picode</h1>
+            </div>
+
+            <ul>
+                <a href="index.html">
+                    <li>Início</li>
+                    <li>~/</li>
+                </a>
+                <a href="./pages/encoder.html">
+                    <li>Encoder</li>
+                    <li>->01</li>
+                </a>
+                <a href="./pages/decoder.html">
+                    <li>Decoder</li>
+                    <li>01-></li>
+                </a>
+                <a href="./pages/generate_pid.html">
+                    <li>Gerar PID</li>
+                    <li>key</li>
+                </a>
+                <a href="./pages/dev.html">
+                    <li>DEV</li>
+                    <li>π</li>
+                </a>
+            </ul>
+        </div>
+
+        <div class="version-container">
+            <p>picode</p>
+            <p>v1.0</p>
+        </div>
+    </nav>
+</header>
+
+*//*# sourceMappingURL=index.css.map */

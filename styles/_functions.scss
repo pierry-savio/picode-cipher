@@ -5,4 +5,5 @@
 @mixin resetTextDecorations(){
     list-style: none;
     font-style: none;
+    text-decoration: none;
 }

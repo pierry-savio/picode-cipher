@@ -1,0 +1,82 @@
+header.header-mobile{
+    @include font-title();
+
+    nav{
+        div.header-container{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 25px 18px 25px;
+            border-bottom: 1px solid $line;
+            background-color: $bg;
+            position: fixed;
+            z-index: 999;
+            width: 100%;
+
+            div.icon-container{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                img{
+                    width: 35px;
+                    height: 35px;
+                }
+                h1{
+                    color: white;
+                    font-size: 22px;
+                }
+            }
+            //Menu icon
+            img.menu-icon{
+                transform: rotate(90deg);
+                width: 25px;
+                height: 20px;
+                cursor: pointer;
+                transition: 0.5s ease;
+            }
+
+            img.menu-icon.closed{
+                transform: rotate(0deg);
+            }
+            
+        }
+        ul.mobile-menu{
+            position: fixed;
+            z-index: 998;
+            width: 100%;
+            left: 0;
+            top: 0;
+            transform: translateY(71px);
+            a{
+                @include resetTextDecorations();
+                li{
+                    padding: 12px 25px 12px 25px;
+                    background-color: $surface-2;
+                    color: $muted;
+                    border: 1px solid $line;
+                    transition: 0.2s ease;
+
+                    &:hover{
+                        color: white;
+                    }
+
+                    &:active{
+                        background-color: rgba($magenta-dim, 0.08);
+                        border: 1px solid rgba(255, 45, 176, 1);
+                        color: $magenta;
+                    }
+                }
+            }
+            transition: 0.5s ease;
+        }
+
+        ul.mobile-menu.closed{
+            transform: translateY(-154px);
+        }
+    }
+
+    @media (min-width: 1200px){
+        display: none;
+    }
+}
