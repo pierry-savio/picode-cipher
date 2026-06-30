@@ -6,6 +6,9 @@
     <title>Picode</title>
     <link rel="stylesheet" href="./styles/index.css">
 
+    <!--FAVICON-->
+    <link rel="icon" type="image/png" href="./img/icons/favicon.png">
+
     <!--FONTS-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +21,75 @@
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+    <!-- ===== HEADER MOBILE ====== -->
+    <header class="header-mobile">
+        <nav>
+            <div class="header-container">
+                <div class="icon-container">
+                    <img src="./img/icons/favicon.png" alt="Picode">
+                    <h1>Picode</h1>
+                </div>
+                <img src="./img/icons/menu.png" alt="Menu" id="mobile_button_menu" class="menu-icon closed">
+            </div>
+            <ul class="mobile-menu closed" id="mobile_menu">
+                <a href="index.html">
+                    <li>Início</li>
+                </a>
+                <a href="./pages/encoder.html">
+                    <li>Encoder</li>
+                </a>
+                <a href="./pages/decoder.html">
+                    <li>Decoder</li>
+                </a>
+                <a href="./pages/generate_pid.html">
+                    <li>Gerar PID</li>
+                </a>
+                <a href="./pages/dev.html">
+                    <li>Dev</li>
+                </a>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ===== HEADER PC ====== -->
+    <header class="header-pc">
+        <nav>
+            <div class="header-container">
+                <div class="icon-container">
+                    <img src="./img/icons/favicon.png" alt="Picode">
+                    <h1>Picode</h1>
+                </div>
+
+                <ul>
+                    <a href="index.html">
+                        <li class="ul-item">Início</li>
+                        <li class="ul-mark">~/</li>
+                    </a>
+                    <a href="./pages/encoder.html">
+                        <li class="ul-item">Encoder</li>
+                        <li class="ul-mark">->01</li>
+                    </a>
+                    <a href="./pages/decoder.html">
+                        <li class="ul-item">Decoder</li>
+                        <li class="ul-mark">01-></li>
+                    </a>
+                    <a href="./pages/generate_pid.html">
+                        <li class="ul-item">Gerar PID</li>
+                        <li class="ul-mark">key</li>
+                    </a>
+                    <a href="./pages/dev.html">
+                        <li class="ul-item">DEV</li>
+                        <li class="ul-mark">π</li>
+                    </a>
+                </ul>
+            </div>
+
+            <div class="version-container">
+                <p>picode</p>
+                <p>v1.0</p>
+            </div>
+        </nav>
+    </header>
     <script src="script.js"></script>
 </body>
 </html>

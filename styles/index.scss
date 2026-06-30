@@ -7,6 +7,10 @@
 // ===== IMPORTS =====
 @import 'colors';
 @import 'functions';
+@import 'fonts';
+//Header
+@import 'header-mobile';
+@import 'header-pc';
 //Sections
 @import './sections/hero';
 @import './sections/encoder';

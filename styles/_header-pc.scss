@@ -1,0 +1,147 @@
+header.header-pc{
+    
+    border-right: 1px solid $line;
+    width: 250px;
+    height: 100vh;
+    background-color: $bg;
+    padding: 20px;
+
+    nav{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: left;
+        height: 100%;
+
+        div.header-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: left;
+            gap: 40px;
+            div.icon-container{
+                display: flex;
+                justify-content: left;
+                align-items: center;
+                gap: 10px;
+                img{
+                    width: 30px;
+                }
+                h1{
+                    font-size: 24px;
+                    color: white;
+                    font-weight: 500;
+                    @include font-title();
+                }
+            }
+
+            ul{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                padding: 10px;
+                a{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 10px;
+                    border-radius: 8px;
+                    @include font-text();
+                    @include resetTextDecorations();
+                    border: 1px solid transparent;
+                    transition: 0.3s ease;
+
+                    li.ul-item{
+                        color: $muted;
+                        font-size: 15px;
+                        transition: 0.2s ease;
+                        font-weight: 600;
+                        &:hover{
+                            color: white;
+                        }
+                    }
+                    li.ul-mark{
+                        font-size: 10px;
+                        @include font-code();
+                        color: $muted;
+                    }
+
+                    &:hover{
+                        background-color: $surface;
+                        li{
+                            color: white;
+                        }
+                    }
+
+                    &:active{
+                        background-color: rgba($magenta, 0.08);
+                        border: 1px solid $magenta;
+                        li{
+                            color: $magenta;
+                        }
+                    }
+                }
+            }
+        }
+
+        div.version-container{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid $line;
+            padding-top: 14px;
+            p{
+                @include font-code();
+                color: $muted;
+                font-size: 12px;
+            }
+        }
+    }
+
+    @media (max-width: 1200px){
+        display: none;
+    }
+}
+
+/*
+
+<header class="header-pc">
+    <nav>
+        <div class="header-container">
+            <div class="icon-container">
+                <img src="./img/icons/favicon.png" alt="Picode">
+                <h1>Picode</h1>
+            </div>
+
+            <ul>
+                <a href="index.html">
+                    <li>Início</li>
+                    <li>~/</li>
+                </a>
+                <a href="./pages/encoder.html">
+                    <li>Encoder</li>
+                    <li>->01</li>
+                </a>
+                <a href="./pages/decoder.html">
+                    <li>Decoder</li>
+                    <li>01-></li>
+                </a>
+                <a href="./pages/generate_pid.html">
+                    <li>Gerar PID</li>
+                    <li>key</li>
+                </a>
+                <a href="./pages/dev.html">
+                    <li>DEV</li>
+                    <li>π</li>
+                </a>
+            </ul>
+        </div>
+
+        <div class="version-container">
+            <p>picode</p>
+            <p>v1.0</p>
+        </div>
+    </nav>
+</header>
+
+*/
