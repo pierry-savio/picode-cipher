@@ -1,3 +1,8 @@
 section.hero{
-    
+    padding: 100px 20px 20px 20px;
+    color: white;
+
+    @media (min-width: 1200px){
+        padding: 0;
+    }
 }

@@ -3,8 +3,10 @@ header.header-pc{
     border-right: 1px solid $line;
     width: 250px;
     height: 100vh;
-    background-color: $bg;
     padding: 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
 
     nav{
         display: flex;

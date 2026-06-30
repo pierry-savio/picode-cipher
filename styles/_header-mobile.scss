@@ -62,7 +62,7 @@ header.header-mobile{
                     }
 
                     &:active{
-                        background-color: rgba($magenta-dim, 0.08);
+                        background-color: $magenta-dim;
                         border: 1px solid rgba(255, 45, 176, 1);
                         color: $magenta;
                     }
@@ -72,7 +72,7 @@ header.header-mobile{
         }
 
         ul.mobile-menu.closed{
-            transform: translateY(-154px);
+            transform: translateY(-159px);
         }
     }
 
