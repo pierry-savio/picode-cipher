@@ -1,8 +1,96 @@
 section.hero{
-    padding: 100px 20px 20px 20px;
-    color: white;
+    padding: 100px 20px 100px 20px;
+    @include sectionHeader();
+    display: flex;
+    flex-direction: column;
+
+    div.buttons-container{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 16px;
+        margin-bottom: 80px;
+
+        a{
+            width: 100%;
+
+            button{
+                cursor: pointer;
+                width: 100%;
+                border-radius: 50px;
+                border: none;
+                @include font-code();
+                color: white;
+                font-weight: 500;
+                padding: 14px;
+                font-size: 16px;
+                transition: 0.2s ease;
+            }
+
+            button.generate-pid{
+                background-color: $magenta;
+                box-shadow: 0 6px 10px 0 rgba($magenta, 0.2);
+
+                &:hover{
+                    box-shadow: 0 6px 10px 0 rgba($magenta, 0.6);
+                    transform: translateY(-2px);
+                }
+            }
+
+            button.encoder{
+                background-color: transparent;
+                border: 1px solid $line;
+
+                &:hover{
+                    border: 1px solid white;
+                    transform: translateY(-2px);
+                }
+            }
+        }
+    }
+
+    p.sentences{
+        margin-top: 20px;
+        color: $muted-2;
+        @include font-code();
+        font-size: 14px;
+        margin-bottom: 80px;
+    }
+
+    div.info-container{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+
+        div.info{
+            h3{
+                color: white;
+                @include font-title();
+                font-size: 32px;
+                font-weight: 700;
+            }
+            p{
+                @include font-text();
+                color: $muted-2;
+                font-size: 14px;
+                font-weight: 300;
+            }
+        }
+    }
 
     @media (min-width: 1200px){
         padding: 0;
+
+        div.buttons-container{
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        p.sentences{
+            text-align: center;
+        }
+
+        div.info-container{
+            grid-template-columns: repeat(3, 1fr);
+            place-items: center;
+        }
     }
 }

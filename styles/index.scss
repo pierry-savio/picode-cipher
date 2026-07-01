@@ -32,11 +32,9 @@ span.highlight{
 body{
     padding-left: 0;
     background-color: $bg;
-    background-image:
-        radial-gradient(circle at 15% 0%, rgba($magenta, 0.08), transparent 40%),
-        radial-gradient(circle at 85% 100%, rgba($cyan, 0.05), transparent 45%);
-    height: 100vh;
-        @media (min-width: 1200px){
+    background-image: linear-gradient(135deg, rgba($magenta, 0.08), rgba($cyan, 0.05));
+
+    @media (min-width: 1200px){
         padding: 60px 60px 60px 310px;
     }
 }

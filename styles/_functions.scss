@@ -1,5 +1,31 @@
 @mixin sectionHeader(){
+    div.section-header-container{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 20px;
 
+        p.section-label{
+            @include font-code();
+            color: $cyan;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        h2.section-title{
+            @include font-title();
+            font-size: clamp(30px, 7vw, 60px);
+            color: white;
+            font-weight: 800;
+        }
+
+        p.section-description{
+            @include font-text();
+            color: $text;
+            line-height: 28px;
+            font-size: clamp(16px, 2.5vh, 32px);
+        }
+    }
 }
 
 @mixin resetTextDecorations(){
