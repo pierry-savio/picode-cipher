@@ -3,11 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Picode Dev</title>
-    <link rel="stylesheet" href="./styles/index.css">
+    <title>Picode DEV</title>
+    <link rel="stylesheet" href="../styles/index.css">
+
+    <!--FAVICON-->
+    <link rel="icon" type="image/png" href="../img/icons/favicon.png">
+
+    <!--FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
 </head>
 <body>
-    
-    <script src="script.js"></script>
+    <!-- ===== HEADER MOBILE ====== -->
+    <header class="header-mobile">
+        <nav>
+            <div class="header-container">
+                <div class="icon-container">
+                    <img src="../img/icons/favicon.png" alt="Picode">
+                    <h1>Picode</h1>
+                </div>
+                <img src="../img/icons/menu.png" alt="Menu" id="mobile_button_menu" class="menu-icon closed">
+            </div>
+            <ul class="mobile-menu closed" id="mobile_menu">
+                <a href="../index.html">
+                    <li>Início</li>
+                </a>
+                <a href="./encoder.html">
+                    <li>Encoder</li>
+                </a>
+                <a href="./decoder.html">
+                    <li>Decoder</li>
+                </a>
+                <a href="./generate_pid.html">
+                    <li>Gerar PID</li>
+                </a>
+                <a href="./dev.html">
+                    <li>Dev</li>
+                </a>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ===== HEADER PC ====== -->
+    <header class="header-pc">
+        <nav>
+            <div class="header-container">
+                <div class="icon-container">
+                    <img src="../img/icons/favicon.png" alt="Picode">
+                    <h1>Picode</h1>
+                </div>
+
+                <ul>
+                    <a href="../index.html">
+                        <li class="ul-item">Início</li>
+                        <li class="ul-mark">~/</li>
+                    </a>
+                    <a href="./encoder.html">
+                        <li class="ul-item">Encoder</li>
+                        <li class="ul-mark">->01</li>
+                    </a>
+                    <a href="./decoder.html">
+                        <li class="ul-item">Decoder</li>
+                        <li class="ul-mark">01-></li>
+                    </a>
+                    <a href="./generate_pid.html">
+                        <li class="ul-item">Gerar PID</li>
+                        <li class="ul-mark">key</li>
+                    </a>
+                    <a href="./dev.html">
+                        <li class="ul-item">DEV</li>
+                        <li class="ul-mark">π</li>
+                    </a>
+                </ul>
+            </div>
+
+            <div class="version-container">
+                <p>picode</p>
+                <p>v1.0</p>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="dev">
+            <div class="section-header-container">
+                <p class="section-label">- 04 SOBRE</p>
+                <h2 class="section-title">Quem fez isso</h2>
+            </div>
+
+            <div class="dev-container">
+                <img src="../img/dev/Pierry.png" alt="Pierry Savio">
+
+                <div class="content-container">
+                    <h3>Pierry Savio</h3>
+                    <p>Oi! Sou o criador deste projeto. O Picode surgiu como uma simples ideia de manter textos, senhas e arquivos confidenciais
+                        mais seguros. Pensei em usar alguma cifra já existente, mas havia um grande problema nisso - alguém poderia decodificá-la.
+                    </p>
+                    <p>Então senti a necessidade de criar o Picode, minha própria cifra. Utilizando a PID (chave única de codificação), é possível criar codificações únicas que só poderão ser decifradas com a respectiva chave.</p>
+                    <p>Se esse projeto te agradou ou te ajudou de alguma forma, considere deixar um café ou me mandar uma mensagem.</p>
+                    <p>Obrigado! :)</p>
+                </div>
+            </div>
+
+            <div class="contact-container">
+                <a href="https://wa.me/5511974838207">
+                    <button class="talk-with-me-button">💭 Falar comigo</button>
+                </a>
+
+                <a href="">
+                    <button class="pay-coffee-button">☕ Pagar um café</button>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script src="../script.js"></script>
 </body>
 </html>

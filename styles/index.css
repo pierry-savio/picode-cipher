@@ -913,6 +913,184 @@ section.pid div.pid-container div.save-buttons-container button:active {
   border: 1px solid #26262f;
 }
 
+section.dev div.section-header-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+section.dev div.section-header-container p.section-label {
+  font-family: "JetBrains Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  color: #28e0d6;
+  font-size: 14px;
+  font-weight: 400;
+}
+section.dev div.section-header-container h2.section-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-size: clamp(30px, 7vw, 60px);
+  color: white;
+  font-weight: 800;
+}
+section.dev div.section-header-container p.section-description {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  color: #eceaf2;
+  line-height: 28px;
+  font-size: clamp(16px, 2.5vh, 32px);
+}
+section.dev {
+  padding: 100px 20px 80px 20px;
+}
+@media (min-width: 1200px) {
+  section.dev {
+    padding: 0;
+  }
+}
+section.dev div.dev-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 30px;
+  margin-bottom: 30px;
+}
+section.dev div.dev-container img {
+  width: 100%;
+  aspect-ratio: 0.8/1;
+  border-radius: 8px;
+  border: 1px solid #26262f;
+  box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.3);
+}
+section.dev div.dev-container div.content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 30px;
+}
+section.dev div.dev-container div.content-container h3 {
+  font-family: "Space Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  color: white;
+  font-size: 26px;
+  font-weight: 600;
+  text-align: center;
+}
+section.dev div.dev-container div.content-container p {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-weight: 300;
+  color: #8b8997;
+  text-align: justify;
+}
+section.dev div.contact-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+}
+section.dev div.contact-container a {
+  list-style: none;
+  font-style: none;
+  text-decoration: none;
+}
+section.dev div.contact-container a button.talk-with-me-button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 14px;
+  font-size: 16px;
+  background-color: transparent;
+  border: 1px solid #26262f;
+  border-radius: 50px;
+  color: #8b8997;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+section.dev div.contact-container a button.talk-with-me-button img {
+  width: 14px;
+}
+section.dev div.contact-container a button.talk-with-me-button:hover {
+  border: 1px solid white;
+}
+section.dev div.contact-container a button.talk-with-me-button:active {
+  border: 1px solid #26262f;
+}
+section.dev div.contact-container a button.pay-coffee-button {
+  cursor: pointer;
+  width: 100%;
+  border-radius: 50px;
+  border: none;
+  font-family: "JetBrains Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  color: white;
+  font-weight: 500;
+  padding: 14px;
+  font-size: 16px;
+  transition: 0.2s ease;
+  background-color: #ff2db0;
+  box-shadow: 0 6px 10px 0 rgba(255, 45, 176, 0.2);
+}
+section.dev div.contact-container a button.pay-coffee-button:hover {
+  box-shadow: 0 6px 10px 0 rgba(255, 45, 176, 0.6);
+  transform: translateY(-2px);
+}
+section.dev div.contact-container a button.pay-coffee-button:active {
+  box-shadow: 0 6px 10px 0 rgba(255, 45, 176, 0.2);
+  transform: translateY(0px);
+}
+@media (min-width: 1200px) {
+  section.dev div.dev-container img {
+    width: 60%;
+    align-self: center;
+    justify-self: center;
+  }
+  section.dev div.dev-container {
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 60px;
+  }
+  section.dev div.contact-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/*
+
+<div class="dev-container">
+    <img src="../img/dev/Pierry.png" alt="Pierry Savio">
+
+    <div class="content-container">
+        <h3>Pierry Savio</h3>
+        <p>Oi! Sou o criador deste projeto. O Picode surgiu como uma simples ideia de manter textos, senhas e arquivos confidenciais
+            mais seguros. Pensei em usar alguma cifra já existente, mas havia um grande problema nisso - alguém poderia decodificá-la.
+            Então senti a necessidade de criar o Picode, minha própria cifra. Utilizando a PID (chave única de codificação), é possível
+            criar codificações únicas que só poderão ser decifradas com a respectiva chave.
+            <br>
+            Se esse projeto te agradou ou te ajudou de alguma forma, considere deixar um café ou me mandar uma mensagem.
+            <br>
+            Obrigado!
+        </p>
+
+        <div class="contact-container">
+            <button class="talk-with-me-button">Falar comigo</button>
+            <button class="pay-coffee-button">☕ Pagar um café</button>
+        </div>
+    </div>
+</div>
+
+*/
 div.line {
   background-color: transparent;
   border-bottom: 1px solid #26262f;
