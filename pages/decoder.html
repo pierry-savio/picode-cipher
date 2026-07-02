@@ -4,10 +4,147 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Picode Decoder</title>
-    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="../styles/index.css">
+
+    <!--FAVICON-->
+    <link rel="icon" type="image/png" href="../img/icons/favicon.png">
+
+    <!--FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
 </head>
 <body>
-    
-    <script src="script.js"></script>
+    <!-- ===== HEADER MOBILE ====== -->
+    <header class="header-mobile">
+        <nav>
+            <div class="header-container">
+                <div class="icon-container">
+                    <img src="../img/icons/favicon.png" alt="Picode">
+                    <h1>Picode</h1>
+                </div>
+                <img src="../img/icons/menu.png" alt="Menu" id="mobile_button_menu" class="menu-icon closed">
+            </div>
+            <ul class="mobile-menu closed" id="mobile_menu">
+                <a href="../index.html">
+                    <li>Início</li>
+                </a>
+                <a href="./encoder.html">
+                    <li>Encoder</li>
+                </a>
+                <a href="./decoder.html">
+                    <li>Decoder</li>
+                </a>
+                <a href="./generate_pid.html">
+                    <li>Gerar PID</li>
+                </a>
+                <a href="./dev.html">
+                    <li>Dev</li>
+                </a>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ===== HEADER PC ====== -->
+    <header class="header-pc">
+        <nav>
+            <div class="header-container">
+                <div class="icon-container">
+                    <img src="../img/icons/favicon.png" alt="Picode">
+                    <h1>Picode</h1>
+                </div>
+
+                <ul>
+                    <a href="../index.html">
+                        <li class="ul-item">Início</li>
+                        <li class="ul-mark">~/</li>
+                    </a>
+                    <a href="./encoder.html">
+                        <li class="ul-item">Encoder</li>
+                        <li class="ul-mark">->01</li>
+                    </a>
+                    <a href="./decoder.html">
+                        <li class="ul-item">Decoder</li>
+                        <li class="ul-mark">01-></li>
+                    </a>
+                    <a href="./generate_pid.html">
+                        <li class="ul-item">Gerar PID</li>
+                        <li class="ul-mark">key</li>
+                    </a>
+                    <a href="./dev.html">
+                        <li class="ul-item">DEV</li>
+                        <li class="ul-mark">π</li>
+                    </a>
+                </ul>
+            </div>
+
+            <div class="version-container">
+                <p>picode</p>
+                <p>v1.0</p>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="decoder">
+            <div class="section-header-container">
+                <p class="section-label">- 02 DECODIFICAR</p>
+                
+                <h2 class="section-title">Decoder</h2>
+
+                <p class="section-description">Cole um código gerado pelo Encoder. Só a PID usada na codificação original consegue devolver o texto original.</p>
+            </div>
+
+            <div class="encoder-container">
+                <div class="input-container">
+                    <div class="information-container">
+                        <p>• Entrada</p>
+                        <p>código</p>
+                    </div>
+                    
+                    <label class="send-file-button" for="input_file">
+                        <img src="../img/icons/download.png" alt="Upload">
+                        <label for="input_file" class="input-file">Enviar arquivo .txt</label>
+                        <input type="file" id="input_file" accept=".txt">
+                    </label>
+
+                    <textarea id="encoder_input" class="encoder-input" placeholder="Cole o código que deseja decodificar..."></textarea>
+
+                    <button class="encode-button">DECODE</button>
+                </div>
+
+                <div class="output-container">
+                    <div class="information-container">
+                        <p>• Saída</p>
+                        <p>texto original</p>
+                    </div>
+
+                    <textarea readonly id="encoder_output" class="encoder-output" placeholder="O texto decodificado aparece aqui..."></textarea>
+
+                    <div class="save-buttons-container">
+                        <button class="copy-button">
+                            Copiar
+                            <img src="../img/icons/copy.png" alt="Copiar">
+                        </button>
+
+                        <button class="download-button">
+                            Baixar
+                            <img src="../img/icons/download.png" alt="Baixar">
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <script src="../script.js"></script>
 </body>
 </html>

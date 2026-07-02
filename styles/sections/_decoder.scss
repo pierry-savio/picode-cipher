@@ -1,3 +1,141 @@
 section.decoder{
-    
+    @include sectionHeader();
+    @include sectionPadding();
+
+    div.encoder-container{
+
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+
+        div.input-container{
+            background-color: $surface;
+            border: 1px solid $line;
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+
+            div.information-container{
+                display: flex;
+                justify-content: space-between;
+                @include font-code();
+                font-weight: 300;
+                p{
+                    color: $muted;  
+                    font-size: 14px;  
+                }
+            }
+
+            label.send-file-button{
+                background-color: transparent;
+                border: 1px dashed $line;
+                color: $muted;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                padding: 14px;
+                font-size: 16px;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: 0.3s ease;
+
+                label{
+                    @include font-code();
+                    cursor: pointer;
+                    font-weight: 500;
+                }
+
+                input{
+                    display: none;
+                }
+
+                img{
+                    width: 12px;
+                    cursor: pointer;
+                }
+
+                &:hover{
+                    border: 1px dashed $cyan;
+                }
+            }
+
+            textarea.encoder-input{
+                @include font-code();
+                background-color: $bg;
+                border: 1px solid $line;
+                border-radius: 8px;
+                padding: 14px;
+                height: 200px;
+                font-weight: 200;
+                color: $text;
+                transition: 0.3s ease;
+                
+                &:hover{
+                    border: 1px solid $magenta;
+                }
+
+                &::placeholder{
+                    color: $muted-2;
+                }
+            }
+
+            button.encode-button{
+                @include highlightButton(16px, 8px);
+            }
+        }
+
+        div.output-container{
+
+            @extend .input-container;
+            justify-content: space-between;
+
+            textarea.encoder-output{
+                @extend.encoder-input;
+            }
+
+            div.save-buttons-container{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+
+                button{
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 10px;
+                    padding: 14px;
+                    font-size: 16px;
+                    background-color: transparent;
+                    border: 1px solid $line;
+                    border-radius: 8px;
+                    color: $muted;
+                    transition: 0.3s ease;
+                    cursor: pointer;
+
+                    img{
+                        width: 14px;
+                    }
+
+                    &:hover{
+                        border: 1px solid white;
+                    }
+
+                    &:active{
+                        border: 1px solid $line;
+                    }
+                }
+            }
+        }
+
+        @media (min-width: 1200px){
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+    }
 }
+
