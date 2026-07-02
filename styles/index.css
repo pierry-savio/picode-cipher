@@ -1103,17 +1103,44 @@ span.highlight {
   color: #ff2db0;
 }
 
+/*
+body{
+    padding-left: 0;
+    background-color: $bg;
+    background-image: linear-gradient(135deg, rgba($magenta, 0.08), rgba($cyan, 0.05));
+    min-height: 100vh;
+    height: fit-content;
+    background-size: cover;
+
+    @media (min-width: 1200px){
+        padding: 60px 60px 60px 310px;
+    }
+}
+*/
 body {
   padding-left: 0;
   background-color: #0a0a0f;
   background-image: linear-gradient(135deg, rgba(255, 45, 176, 0.08), rgba(40, 224, 214, 0.05));
+  background-size: 400% 400%;
   min-height: 100vh;
   height: -moz-fit-content;
   height: fit-content;
-  background-size: cover;
+  animation: gradientWave 5s ease infinite;
 }
 @media (min-width: 1200px) {
   body {
     padding: 60px 60px 60px 310px;
+  }
+}
+
+@keyframes gradientWave {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }/*# sourceMappingURL=index.css.map */
