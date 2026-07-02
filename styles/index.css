@@ -619,12 +619,12 @@ section.decoder {
     padding: 0;
   }
 }
-section.decoder div.encoder-container {
+section.decoder div.decoder-container {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 20px;
 }
-section.decoder div.encoder-container div.input-container, section.decoder div.encoder-container div.output-container {
+section.decoder div.decoder-container div.input-container, section.decoder div.decoder-container div.output-container {
   background-color: #13131b;
   border: 1px solid #26262f;
   border-radius: 8px;
@@ -633,7 +633,7 @@ section.decoder div.encoder-container div.input-container, section.decoder div.e
   flex-direction: column;
   gap: 14px;
 }
-section.decoder div.encoder-container div.input-container div.information-container, section.decoder div.encoder-container div.output-container div.information-container {
+section.decoder div.decoder-container div.input-container div.information-container, section.decoder div.decoder-container div.output-container div.information-container {
   display: flex;
   justify-content: space-between;
   font-family: "JetBrains Mono", monospace;
@@ -642,11 +642,11 @@ section.decoder div.encoder-container div.input-container div.information-contai
   font-style: normal;
   font-weight: 300;
 }
-section.decoder div.encoder-container div.input-container div.information-container p, section.decoder div.encoder-container div.output-container div.information-container p {
+section.decoder div.decoder-container div.input-container div.information-container p, section.decoder div.decoder-container div.output-container div.information-container p {
   color: #8b8997;
   font-size: 14px;
 }
-section.decoder div.encoder-container div.input-container label.send-file-button, section.decoder div.encoder-container div.output-container label.send-file-button {
+section.decoder div.decoder-container div.input-container label.send-file-button, section.decoder div.decoder-container div.output-container label.send-file-button {
   background-color: transparent;
   border: 1px dashed #26262f;
   color: #8b8997;
@@ -660,7 +660,7 @@ section.decoder div.encoder-container div.input-container label.send-file-button
   cursor: pointer;
   transition: 0.3s ease;
 }
-section.decoder div.encoder-container div.input-container label.send-file-button label, section.decoder div.encoder-container div.output-container label.send-file-button label {
+section.decoder div.decoder-container div.input-container label.send-file-button label, section.decoder div.decoder-container div.output-container label.send-file-button label {
   font-family: "JetBrains Mono", monospace;
   font-optical-sizing: auto;
   font-weight: 100;
@@ -668,17 +668,17 @@ section.decoder div.encoder-container div.input-container label.send-file-button
   cursor: pointer;
   font-weight: 500;
 }
-section.decoder div.encoder-container div.input-container label.send-file-button input, section.decoder div.encoder-container div.output-container label.send-file-button input {
+section.decoder div.decoder-container div.input-container label.send-file-button input, section.decoder div.decoder-container div.output-container label.send-file-button input {
   display: none;
 }
-section.decoder div.encoder-container div.input-container label.send-file-button img, section.decoder div.encoder-container div.output-container label.send-file-button img {
+section.decoder div.decoder-container div.input-container label.send-file-button img, section.decoder div.decoder-container div.output-container label.send-file-button img {
   width: 12px;
   cursor: pointer;
 }
-section.decoder div.encoder-container div.input-container label.send-file-button:hover, section.decoder div.encoder-container div.output-container label.send-file-button:hover {
+section.decoder div.decoder-container div.input-container label.send-file-button:hover, section.decoder div.decoder-container div.output-container label.send-file-button:hover {
   border: 1px dashed #28e0d6;
 }
-section.decoder div.encoder-container div.input-container textarea.encoder-input, section.decoder div.encoder-container div.output-container textarea.encoder-input, section.decoder div.encoder-container div.output-container textarea.encoder-output {
+section.decoder div.decoder-container div.input-container textarea.decoder-input, section.decoder div.decoder-container div.output-container textarea.decoder-input, section.decoder div.decoder-container div.output-container textarea.decoder-output {
   font-family: "JetBrains Mono", monospace;
   font-optical-sizing: auto;
   font-weight: 100;
@@ -692,16 +692,16 @@ section.decoder div.encoder-container div.input-container textarea.encoder-input
   color: #eceaf2;
   transition: 0.3s ease;
 }
-section.decoder div.encoder-container div.input-container textarea.encoder-input:hover, section.decoder div.encoder-container div.output-container textarea.encoder-input:hover, section.decoder div.encoder-container div.output-container textarea.encoder-output:hover {
+section.decoder div.decoder-container div.input-container textarea.decoder-input:hover, section.decoder div.decoder-container div.output-container textarea.decoder-input:hover, section.decoder div.decoder-container div.output-container textarea.decoder-output:hover {
   border: 1px solid #ff2db0;
 }
-section.decoder div.encoder-container div.input-container textarea.encoder-input::-moz-placeholder, section.decoder div.encoder-container div.output-container textarea.encoder-input::-moz-placeholder, section.decoder div.encoder-container div.output-container textarea.encoder-output::-moz-placeholder {
+section.decoder div.decoder-container div.input-container textarea.decoder-input::-moz-placeholder, section.decoder div.decoder-container div.output-container textarea.decoder-input::-moz-placeholder, section.decoder div.decoder-container div.output-container textarea.decoder-output::-moz-placeholder {
   color: #5e5c69;
 }
-section.decoder div.encoder-container div.input-container textarea.encoder-input::placeholder, section.decoder div.encoder-container div.output-container textarea.encoder-input::placeholder, section.decoder div.encoder-container div.output-container textarea.encoder-output::placeholder {
+section.decoder div.decoder-container div.input-container textarea.decoder-input::placeholder, section.decoder div.decoder-container div.output-container textarea.decoder-input::placeholder, section.decoder div.decoder-container div.output-container textarea.decoder-output::placeholder {
   color: #5e5c69;
 }
-section.decoder div.encoder-container div.input-container button.encode-button, section.decoder div.encoder-container div.output-container button.encode-button {
+section.decoder div.decoder-container div.input-container button.decode-button, section.decoder div.decoder-container div.output-container button.decode-button {
   cursor: pointer;
   width: 100%;
   border-radius: 8px;
@@ -718,24 +718,24 @@ section.decoder div.encoder-container div.input-container button.encode-button, 
   background-color: #ff2db0;
   box-shadow: 0 6px 10px 0 rgba(255, 45, 176, 0.2);
 }
-section.decoder div.encoder-container div.input-container button.encode-button:hover, section.decoder div.encoder-container div.output-container button.encode-button:hover {
+section.decoder div.decoder-container div.input-container button.decode-button:hover, section.decoder div.decoder-container div.output-container button.decode-button:hover {
   box-shadow: 0 6px 10px 0 rgba(255, 45, 176, 0.6);
   transform: translateY(-2px);
 }
-section.decoder div.encoder-container div.input-container button.encode-button:active, section.decoder div.encoder-container div.output-container button.encode-button:active {
+section.decoder div.decoder-container div.input-container button.decode-button:active, section.decoder div.decoder-container div.output-container button.decode-button:active {
   box-shadow: 0 6px 10px 0 rgba(255, 45, 176, 0.2);
   transform: translateY(0px);
 }
-section.decoder div.encoder-container div.output-container {
+section.decoder div.decoder-container div.output-container {
   justify-content: space-between;
 }
-section.decoder div.encoder-container div.output-container div.save-buttons-container {
+section.decoder div.decoder-container div.output-container div.save-buttons-container {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
 }
-section.decoder div.encoder-container div.output-container div.save-buttons-container button {
+section.decoder div.decoder-container div.output-container div.save-buttons-container button {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -750,20 +750,167 @@ section.decoder div.encoder-container div.output-container div.save-buttons-cont
   transition: 0.3s ease;
   cursor: pointer;
 }
-section.decoder div.encoder-container div.output-container div.save-buttons-container button img {
+section.decoder div.decoder-container div.output-container div.save-buttons-container button img {
   width: 14px;
 }
-section.decoder div.encoder-container div.output-container div.save-buttons-container button:hover {
+section.decoder div.decoder-container div.output-container div.save-buttons-container button:hover {
   border: 1px solid white;
 }
-section.decoder div.encoder-container div.output-container div.save-buttons-container button:active {
+section.decoder div.decoder-container div.output-container div.save-buttons-container button:active {
   border: 1px solid #26262f;
 }
 @media (min-width: 1200px) {
-  section.decoder div.encoder-container {
+  section.decoder div.decoder-container {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
+}
+
+section.pid div.section-header-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+section.pid div.section-header-container p.section-label {
+  font-family: "JetBrains Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  color: #28e0d6;
+  font-size: 14px;
+  font-weight: 400;
+}
+section.pid div.section-header-container h2.section-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-size: clamp(30px, 7vw, 60px);
+  color: white;
+  font-weight: 800;
+}
+section.pid div.section-header-container p.section-description {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  color: #eceaf2;
+  line-height: 28px;
+  font-size: clamp(16px, 2.5vh, 32px);
+}
+section.pid {
+  padding: 100px 20px 80px 20px;
+}
+@media (min-width: 1200px) {
+  section.pid {
+    padding: 0;
+  }
+}
+section.pid div.pid-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+}
+section.pid div.pid-container div.input-container, section.pid div.pid-container section.encoder div.encoder-container div.output-container, section.encoder div.encoder-container section.pid div.pid-container div.output-container, section.pid div.pid-container section.decoder div.decoder-container div.output-container, section.decoder div.decoder-container section.pid div.pid-container div.output-container {
+  background-color: #13131b;
+  border: 1px solid #26262f;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+section.pid div.pid-container div.input-container div.information-container, section.pid div.pid-container section.encoder div.encoder-container div.output-container div.information-container, section.encoder div.encoder-container section.pid div.pid-container div.output-container div.information-container, section.pid div.pid-container section.decoder div.decoder-container div.output-container div.information-container, section.decoder div.decoder-container section.pid div.pid-container div.output-container div.information-container {
+  display: flex;
+  justify-content: space-between;
+  font-family: "JetBrains Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-weight: 300;
+}
+section.pid div.pid-container div.input-container div.information-container p, section.pid div.pid-container section.encoder div.encoder-container div.output-container div.information-container p, section.encoder div.encoder-container section.pid div.pid-container div.output-container div.information-container p, section.pid div.pid-container section.decoder div.decoder-container div.output-container div.information-container p, section.decoder div.decoder-container section.pid div.pid-container div.output-container div.information-container p {
+  color: #8b8997;
+  font-size: 14px;
+}
+section.pid div.pid-container div.input-container textarea.pid-input, section.pid div.pid-container section.encoder div.encoder-container div.output-container textarea.pid-input, section.encoder div.encoder-container section.pid div.pid-container div.output-container textarea.pid-input, section.pid div.pid-container section.decoder div.decoder-container div.output-container textarea.pid-input, section.decoder div.decoder-container section.pid div.pid-container div.output-container textarea.pid-input {
+  font-family: "JetBrains Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  background-color: #0a0a0f;
+  border: 1px solid #26262f;
+  border-radius: 8px;
+  padding: 14px;
+  height: 200px;
+  font-weight: 200;
+  color: #eceaf2;
+  transition: 0.3s ease;
+}
+section.pid div.pid-container div.input-container textarea.pid-input:hover, section.pid div.pid-container section.encoder div.encoder-container div.output-container textarea.pid-input:hover, section.encoder div.encoder-container section.pid div.pid-container div.output-container textarea.pid-input:hover, section.pid div.pid-container section.decoder div.decoder-container div.output-container textarea.pid-input:hover, section.decoder div.decoder-container section.pid div.pid-container div.output-container textarea.pid-input:hover {
+  border: 1px solid #ff2db0;
+}
+section.pid div.pid-container div.input-container textarea.pid-input::-moz-placeholder, section.pid div.pid-container section.encoder div.encoder-container div.output-container textarea.pid-input::-moz-placeholder, section.encoder div.encoder-container section.pid div.pid-container div.output-container textarea.pid-input::-moz-placeholder, section.pid div.pid-container section.decoder div.decoder-container div.output-container textarea.pid-input::-moz-placeholder, section.decoder div.decoder-container section.pid div.pid-container div.output-container textarea.pid-input::-moz-placeholder {
+  color: #5e5c69;
+}
+section.pid div.pid-container div.input-container textarea.pid-input::placeholder, section.pid div.pid-container section.encoder div.encoder-container div.output-container textarea.pid-input::placeholder, section.encoder div.encoder-container section.pid div.pid-container div.output-container textarea.pid-input::placeholder, section.pid div.pid-container section.decoder div.decoder-container div.output-container textarea.pid-input::placeholder, section.decoder div.decoder-container section.pid div.pid-container div.output-container textarea.pid-input::placeholder {
+  color: #5e5c69;
+}
+section.pid div.pid-container div.input-container button.pid-button, section.pid div.pid-container section.encoder div.encoder-container div.output-container button.pid-button, section.encoder div.encoder-container section.pid div.pid-container div.output-container button.pid-button, section.pid div.pid-container section.decoder div.decoder-container div.output-container button.pid-button, section.decoder div.decoder-container section.pid div.pid-container div.output-container button.pid-button {
+  cursor: pointer;
+  width: 100%;
+  border-radius: 8px;
+  border: none;
+  font-family: "JetBrains Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  color: white;
+  font-weight: 500;
+  padding: 14px;
+  font-size: 16px;
+  transition: 0.2s ease;
+  background-color: #ff2db0;
+  box-shadow: 0 6px 10px 0 rgba(255, 45, 176, 0.2);
+}
+section.pid div.pid-container div.input-container button.pid-button:hover, section.pid div.pid-container section.encoder div.encoder-container div.output-container button.pid-button:hover, section.encoder div.encoder-container section.pid div.pid-container div.output-container button.pid-button:hover, section.pid div.pid-container section.decoder div.decoder-container div.output-container button.pid-button:hover, section.decoder div.decoder-container section.pid div.pid-container div.output-container button.pid-button:hover {
+  box-shadow: 0 6px 10px 0 rgba(255, 45, 176, 0.6);
+  transform: translateY(-2px);
+}
+section.pid div.pid-container div.input-container button.pid-button:active, section.pid div.pid-container section.encoder div.encoder-container div.output-container button.pid-button:active, section.encoder div.encoder-container section.pid div.pid-container div.output-container button.pid-button:active, section.pid div.pid-container section.decoder div.decoder-container div.output-container button.pid-button:active, section.decoder div.decoder-container section.pid div.pid-container div.output-container button.pid-button:active {
+  box-shadow: 0 6px 10px 0 rgba(255, 45, 176, 0.2);
+  transform: translateY(0px);
+}
+section.pid div.pid-container div.save-buttons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+section.pid div.pid-container div.save-buttons-container button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 14px;
+  font-size: 16px;
+  background-color: transparent;
+  border: 1px solid #26262f;
+  border-radius: 8px;
+  color: #8b8997;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+section.pid div.pid-container div.save-buttons-container button img {
+  width: 14px;
+}
+section.pid div.pid-container div.save-buttons-container button:hover {
+  border: 1px solid white;
+}
+section.pid div.pid-container div.save-buttons-container button:active {
+  border: 1px solid #26262f;
 }
 
 div.line {

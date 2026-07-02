@@ -2,7 +2,7 @@ section.decoder{
     @include sectionHeader();
     @include sectionPadding();
 
-    div.encoder-container{
+    div.decoder-container{
 
         display: grid;
         grid-template-columns: repeat(1, 1fr);
@@ -62,7 +62,7 @@ section.decoder{
                 }
             }
 
-            textarea.encoder-input{
+            textarea.decoder-input{
                 @include font-code();
                 background-color: $bg;
                 border: 1px solid $line;
@@ -82,7 +82,7 @@ section.decoder{
                 }
             }
 
-            button.encode-button{
+            button.decode-button{
                 @include highlightButton(16px, 8px);
             }
         }
@@ -92,8 +92,8 @@ section.decoder{
             @extend .input-container;
             justify-content: space-between;
 
-            textarea.encoder-output{
-                @extend.encoder-input;
+            textarea.decoder-output{
+                @extend.decoder-input;
             }
 
             div.save-buttons-container{

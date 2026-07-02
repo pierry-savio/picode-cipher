@@ -101,7 +101,7 @@
                 <p class="section-description">Cole um código gerado pelo Encoder. Só a PID usada na codificação original consegue devolver o texto original.</p>
             </div>
 
-            <div class="encoder-container">
+            <div class="decoder-container">
                 <div class="input-container">
                     <div class="information-container">
                         <p>• Entrada</p>
@@ -114,9 +114,9 @@
                         <input type="file" id="input_file" accept=".txt">
                     </label>
 
-                    <textarea id="encoder_input" class="encoder-input" placeholder="Cole o código que deseja decodificar..."></textarea>
+                    <textarea id="decoder_input" class="decoder-input" placeholder="Cole o código que deseja decodificar..."></textarea>
 
-                    <button class="encode-button">DECODE</button>
+                    <button class="decode-button">DECODE</button>
                 </div>
 
                 <div class="output-container">
@@ -125,7 +125,7 @@
                         <p>texto original</p>
                     </div>
 
-                    <textarea readonly id="encoder_output" class="encoder-output" placeholder="O texto decodificado aparece aqui..."></textarea>
+                    <textarea readonly id="decoder_output" class="decoder-output" placeholder="O texto decodificado aparece aqui..."></textarea>
 
                     <div class="save-buttons-container">
                         <button class="copy-button">
@@ -137,7 +137,6 @@
                             Baixar
                             <img src="../img/icons/download.png" alt="Baixar">
                         </button>
-
                     </div>
                 </div>
             </div>
