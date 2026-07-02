@@ -28,6 +28,13 @@ div.line{
 
 span.highlight{
     color: $magenta;
+    animation: colorAnimation 5s linear infinite;
+}
+
+@keyframes colorAnimation {
+  0%    { filter: hue-rotate(300deg); }
+  50%   { filter: hue-rotate(360deg); }
+  100%  { filter: hue-rotate(300deg); }
 }
 
 /*
