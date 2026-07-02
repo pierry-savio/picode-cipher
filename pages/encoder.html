@@ -108,10 +108,11 @@
                         <p>.txt</p>
                     </div>
                     
-                    <button class="send-file-button">
+                    <label class="send-file-button" for="input_file">
                         <img src="../img/icons/download.png" alt="Upload">
-                        Enviar arquivo .txt
-                    </button>
+                        <label for="input_file" class="input-file">Enviar arquivo</label>
+                        <input type="file" id="input_file" accept=".txt">
+                    </label>
 
                     <textarea id="encoder_input" class="encoder-input" placeholder="Cole o texto que deseja codificar..."></textarea>
 
@@ -124,7 +125,7 @@
                         <p>Codificado</p>
                     </div>
 
-                    <textarea id="encoder_output" class="encoder-output" placeholder="O resultado codificado aparece aqui..."></textarea>
+                    <textarea readonly id="encoder_output" class="encoder-output" placeholder="O resultado codificado aparece aqui..."></textarea>
 
                     <div class="save-buttons-container">
                         <button class="copy-button">

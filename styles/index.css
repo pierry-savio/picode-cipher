@@ -332,6 +332,10 @@ section.hero div.buttons-container a button.generate-pid:hover {
   box-shadow: 0 6px 10px 0 rgba(255, 45, 176, 0.6);
   transform: translateY(-2px);
 }
+section.hero div.buttons-container a button.generate-pid:active {
+  box-shadow: 0 6px 10px 0 rgba(255, 45, 176, 0.2);
+  transform: translateY(0px);
+}
 section.hero div.buttons-container a button.encoder {
   background-color: transparent;
   border: 1px solid #26262f;
@@ -454,7 +458,7 @@ section.encoder div.encoder-container div.input-container div.information-contai
   color: #8b8997;
   font-size: 14px;
 }
-section.encoder div.encoder-container div.input-container button.send-file-button, section.encoder div.encoder-container div.output-container button.send-file-button {
+section.encoder div.encoder-container div.input-container label.send-file-button, section.encoder div.encoder-container div.output-container label.send-file-button {
   background-color: transparent;
   border: 1px dashed #26262f;
   color: #8b8997;
@@ -465,12 +469,25 @@ section.encoder div.encoder-container div.input-container button.send-file-butto
   padding: 14px;
   font-size: 16px;
   border-radius: 8px;
+  cursor: pointer;
   transition: 0.3s ease;
 }
-section.encoder div.encoder-container div.input-container button.send-file-button img, section.encoder div.encoder-container div.output-container button.send-file-button img {
-  width: 12px;
+section.encoder div.encoder-container div.input-container label.send-file-button label, section.encoder div.encoder-container div.output-container label.send-file-button label {
+  font-family: "JetBrains Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  cursor: pointer;
+  font-weight: 500;
 }
-section.encoder div.encoder-container div.input-container button.send-file-button:hover, section.encoder div.encoder-container div.output-container button.send-file-button:hover {
+section.encoder div.encoder-container div.input-container label.send-file-button input, section.encoder div.encoder-container div.output-container label.send-file-button input {
+  display: none;
+}
+section.encoder div.encoder-container div.input-container label.send-file-button img, section.encoder div.encoder-container div.output-container label.send-file-button img {
+  width: 12px;
+  cursor: pointer;
+}
+section.encoder div.encoder-container div.input-container label.send-file-button:hover, section.encoder div.encoder-container div.output-container label.send-file-button:hover {
   border: 1px dashed #28e0d6;
 }
 section.encoder div.encoder-container div.input-container textarea.encoder-input, section.encoder div.encoder-container div.output-container textarea.encoder-input, section.encoder div.encoder-container div.output-container textarea.encoder-output {
@@ -517,6 +534,10 @@ section.encoder div.encoder-container div.input-container button.encode-button:h
   box-shadow: 0 6px 10px 0 rgba(255, 45, 176, 0.6);
   transform: translateY(-2px);
 }
+section.encoder div.encoder-container div.input-container button.encode-button:active, section.encoder div.encoder-container div.output-container button.encode-button:active {
+  box-shadow: 0 6px 10px 0 rgba(255, 45, 176, 0.2);
+  transform: translateY(0px);
+}
 section.encoder div.encoder-container div.output-container {
   justify-content: space-between;
 }
@@ -539,12 +560,16 @@ section.encoder div.encoder-container div.output-container div.save-buttons-cont
   border-radius: 8px;
   color: #8b8997;
   transition: 0.3s ease;
+  cursor: pointer;
 }
 section.encoder div.encoder-container div.output-container div.save-buttons-container button img {
   width: 14px;
 }
 section.encoder div.encoder-container div.output-container div.save-buttons-container button:hover {
   border: 1px solid white;
+}
+section.encoder div.encoder-container div.output-container div.save-buttons-container button:active {
+  border: 1px solid #26262f;
 }
 @media (min-width: 1200px) {
   section.encoder div.encoder-container {

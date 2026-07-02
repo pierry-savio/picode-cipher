@@ -28,7 +28,7 @@ section.encoder{
                 }
             }
 
-            button.send-file-button{
+            label.send-file-button{
                 background-color: transparent;
                 border: 1px dashed $line;
                 color: $muted;
@@ -39,10 +39,22 @@ section.encoder{
                 padding: 14px;
                 font-size: 16px;
                 border-radius: 8px;
+                cursor: pointer;
                 transition: 0.3s ease;
+
+                label{
+                    @include font-code();
+                    cursor: pointer;
+                    font-weight: 500;
+                }
+
+                input{
+                    display: none;
+                }
 
                 img{
                     width: 12px;
+                    cursor: pointer;
                 }
 
                 &:hover{
@@ -103,6 +115,7 @@ section.encoder{
                     border-radius: 8px;
                     color: $muted;
                     transition: 0.3s ease;
+                    cursor: pointer;
 
                     img{
                         width: 14px;
@@ -110,6 +123,10 @@ section.encoder{
 
                     &:hover{
                         border: 1px solid white;
+                    }
+
+                    &:active{
+                        border: 1px solid $line;
                     }
                 }
             }
