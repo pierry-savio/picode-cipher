@@ -28,8 +28,36 @@
     }
 }
 
+@mixin sectionPadding(){
+    padding: 100px 20px 80px 20px;
+
+    @media (min-width: 1200px){
+        padding: 0;
+    }
+}
+
 @mixin resetTextDecorations(){
     list-style: none;
     font-style: none;
     text-decoration: none;
+}
+
+@mixin highlightButton($font-size, $border-radius){
+    cursor: pointer;
+    width: 100%;
+    border-radius: $border-radius;
+    border: none;
+    @include font-code();
+    color: white;
+    font-weight: 500;
+    padding: 14px;
+    font-size: $font-size;
+    transition: 0.2s ease;
+    background-color: $magenta;
+    box-shadow: 0 6px 10px 0 rgba($magenta, 0.2);
+
+    &:hover{
+        box-shadow: 0 6px 10px 0 rgba($magenta, 0.6);
+        transform: translateY(-2px);
+    }
 }

@@ -1,5 +1,5 @@
 section.hero{
-    padding: 100px 20px 100px 20px;
+    @include sectionPadding();
     @include sectionHeader();
     display: flex;
     flex-direction: column;
@@ -27,13 +27,7 @@ section.hero{
             }
 
             button.generate-pid{
-                background-color: $magenta;
-                box-shadow: 0 6px 10px 0 rgba($magenta, 0.2);
-
-                &:hover{
-                    box-shadow: 0 6px 10px 0 rgba($magenta, 0.6);
-                    transform: translateY(-2px);
-                }
+                @include highlightButton(16px, 50px);
             }
 
             button.encoder{
@@ -78,8 +72,6 @@ section.hero{
     }
 
     @media (min-width: 1200px){
-        padding: 0;
-
         div.buttons-container{
             grid-template-columns: repeat(2, 1fr);
         }
