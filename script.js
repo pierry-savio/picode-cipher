@@ -38,54 +38,99 @@ const letters = [
 
 
 // ========== E N C O D E ========== //
-const encoder_input_file = document.getElementById("encoder_input_file");
-const encoder_input = document.getElementById("encoder_input"); //input display
 
-if (encoder_input_file !== null){
-    encoder_input_file.addEventListener('change', (e) =>{
-        
-        const file = event.target.files[0];
-  
+//Upload file
+const encoder_input_file = document.getElementById("encoder_input_file");
+const encoder_input = document.getElementById("encoder_input");
+
+if (encoder_input_file !== null) {
+    encoder_input_file.addEventListener('change', (e) => {
+        const file = e.target.files[0];
         if (!file) return;
 
-        const reader = new FileReader();
-
-        reader.onload = function(e) {
-            const content = e.target.result;
-            encoder_input.value = content;
-        };
-
-        reader.onerror = function(e) {
-            console.error('Erro ao ler o arquivo:', e);
-        };
-
-        reader.readAsText(file);
+        file.text().then(text => {
+            encoder_input.value = text;
+            e.target.value = "";
+        });
     });
 }
 
+//Generete code using the PID
+const encode_button = document.getElementById("encode_button");
+const encoder_output = document.getElementById("encoder_output");
+
+if (encode_button != null){
+    encode_button.addEventListener("click", () =>{
+        encoder_output.value = encodeText(encoder_input.value);
+    });
+}
+
+function encodeText(text){
+    //Generating the surface code
+    let surfaceCode = "";
+    for (let i = 0; i<text.length; i++){
+        let letter = text.substring(i, i+1);
+        let letterIndex = letters.indexOf(letter);
+        let pid = localStorage.getItem("pid");
+        surfaceCode += pid.substring(letterIndex*3, letterIndex*3 + 3);
+    }
+
+    //Gererating the deep code
+    let deepCode = "";
+    for (let i = 0; i<surfaceCode.length/3; i++){
+
+        //Current Pid
+        let indexPid = parseInt(surfaceCode.substring(i*3, i*3 + 3));
+        console.log("indexPid: " + indexPid);
+
+        //Number which will decrease the current pid
+        let substractor = Math.floor(Math.random() * 10);
+        console.log("substractor: " + substractor);
+
+        //Rest of the substraction
+        let consequence = indexPid-substractor;
+        console.log("consequence: " + consequence);
+
+        //Substractor + consequence
+        let code = parseInt(substractor + "" + consequence);
+        console.log("code: " + code);
+
+        //Formating the code
+        if (code < 10){
+            code = "00" + code;
+        }
+        else if (code >= 10 && code < 100){
+            code = "0" + code;
+        }
+        else{
+            code = String(code);
+        }
+        deepCode += code;
+        console.log("deepCode: " + deepCode);
+
+        console.log("");
+        console.log("------------------------");
+        console.log("");
+    }
+    return deepCode;
+}
+
 // ========== D E C O D E ========== //
+
+//Upload file
 const decoder_input_file = document.getElementById("decoder_input_file");
 const decoder_input = document.getElementById("decoder_input"); //input display
 
-if (decoder_input_file !== null){
+if (decoder_input_file !== null){ 
     decoder_input_file.addEventListener('change', (e) =>{
         
         const file = event.target.files[0];
-  
         if (!file) return;
 
-        const reader = new FileReader();
-
-        reader.onload = function(e) {
-            const content = e.target.result;
-            decoder_input.value = content;
-        };
-
-        reader.onerror = function(e) {
-            console.error('Erro ao ler o arquivo:', e);
-        };
-
-        reader.readAsText(file);
+        file.text().then(text => {
+            decoder_input.value = text;
+            e.target.value = "";
+        });
     });
 }
 
@@ -176,11 +221,14 @@ const download_pid_button = document.getElementById("download_pid_button");
 if (download_pid_button !== null){
 
     download_pid_button.addEventListener("click", () =>{
+        
         const blob = new Blob([pid_input.value], { type: 'text/plain' });
+
         const link = document.createElement('a');
         link.href = URL.createObjectURL(blob);
         link.download = 'pid.txt';
         link.click();
+
         URL.revokeObjectURL(link.href);
         download_pid_button.textContent = "Baixado!";
     });
