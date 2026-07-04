@@ -36,6 +36,59 @@ const letters = [
   '@','#','$','%','&','*','+','=','<','>','°','ª','º'
 ];
 
+
+// ========== E N C O D E ========== //
+const encoder_input_file = document.getElementById("encoder_input_file");
+const encoder_input = document.getElementById("encoder_input"); //input display
+
+if (encoder_input_file !== null){
+    encoder_input_file.addEventListener('change', (e) =>{
+        
+        const file = event.target.files[0];
+  
+        if (!file) return;
+
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            const content = e.target.result;
+            encoder_input.value = content;
+        };
+
+        reader.onerror = function(e) {
+            console.error('Erro ao ler o arquivo:', e);
+        };
+
+        reader.readAsText(file);
+    });
+}
+
+// ========== D E C O D E ========== //
+const decoder_input_file = document.getElementById("decoder_input_file");
+const decoder_input = document.getElementById("decoder_input"); //input display
+
+if (decoder_input_file !== null){
+    decoder_input_file.addEventListener('change', (e) =>{
+        
+        const file = event.target.files[0];
+  
+        if (!file) return;
+
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            const content = e.target.result;
+            decoder_input.value = content;
+        };
+
+        reader.onerror = function(e) {
+            console.error('Erro ao ler o arquivo:', e);
+        };
+
+        reader.readAsText(file);
+    });
+}
+
 // ========== P I D ========== //
 const pid_button = document.getElementById("pid_button");
 const pid_input = document.getElementById("pid_input");
@@ -43,15 +96,19 @@ const pid_input = document.getElementById("pid_input");
 //Load PID saved on local storage
 loadSavedPid();
 function loadSavedPid(){
-    pid_input.value = localStorage.getItem("pid");
+    if (pid_input != null){
+        pid_input.value = localStorage.getItem("pid");
+    }
 }
 
 //Generate new PID button
-pid_button.addEventListener("click", () =>{
-    let formatedPID = formatPID(generatePID());
-    pid_input.value = formatedPID;
-    savePID(formatedPID);
-});
+if (pid_button !== null){
+    pid_button.addEventListener("click", () =>{
+        let formatedPID = formatPID(generatePID());
+        pid_input.value = formatedPID;
+        savePID(formatedPID);
+    });
+}
 
 //Save PID on localStorage
 function savePID(PID){
@@ -100,29 +157,31 @@ function generatePID(){
             PID[i] = String(PID[i]);
         }
     }
-
-    console.log("PID: " + PID);
     return PID;
 }
 
 //Copy PID button
 const copy_pid_button = document.getElementById("copy_pid_button");
 
-copy_pid_button.addEventListener("click", async () =>{
-    await navigator.clipboard.writeText(pid_input.value);
-    copy_pid_button.textContent = "Copiado!";
-});
+if (copy_pid_button !== null) {
+    copy_pid_button.addEventListener("click", async () =>{
+        await navigator.clipboard.writeText(pid_input.value);
+        copy_pid_button.textContent = "Copiado!";
+    });
+}
 
 //Download PID button
-
 const download_pid_button = document.getElementById("download_pid_button");
 
-download_pid_button.addEventListener("click", () =>{
-    const blob = new Blob([pid_input.value], { type: 'text/plain' });
-    const link = document.createElement('a');
-    link.href = URL.createObjectURL(blob);
-    link.download = 'arquivo.txt';
-    link.click();
-    URL.revokeObjectURL(link.href);
-    download_pid_button.textContent = "Baixado!";
-});
+if (download_pid_button !== null){
+
+    download_pid_button.addEventListener("click", () =>{
+        const blob = new Blob([pid_input.value], { type: 'text/plain' });
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = 'pid.txt';
+        link.click();
+        URL.revokeObjectURL(link.href);
+        download_pid_button.textContent = "Baixado!";
+    });
+}
