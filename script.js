@@ -127,10 +127,48 @@ if (decode_button !== null) {
     });
 }
 
-//Decoding code
-function decodeCode(code){
-    let decode = code;
-    return decode;
+//Decoding code: Deep code --> Surface code --> Text
+function decodeCode(deepCode){
+    let surfaceCode = decodeToSurfaceCode(deepCode);
+    let text = decodeToText(surfaceCode);
+    return text;
+}
+
+//Decoding: Deep code --> Surface code
+function decodeToSurfaceCode(deepCode){
+    let surfaceCode = "";
+    for (let i = 0; i<deepCode.length/6; i++){
+        let adder = parseInt(deepCode.substring(i*6, i*6 + 3));
+        let filler = parseInt(deepCode.substring(i*6 + 3, i*6 + 6));
+        surfaceCode += adder - filler;
+    }
+    return surfaceCode;
+}
+
+//Decoding: Surface code --> Text
+function decodeToText(surfaceCode){
+    
+    //Parsing pid to an array
+    let arrayPid = [];
+    for (let i = 0; i < localStorage.getItem("pid").length/3; i++){
+        console.log("n - " + i);
+        arrayPid.push(localStorage.getItem("pid").substring(i*3, i*3 + 3));
+        console.log("what pushed: " + localStorage.getItem("pid").substring(i*3, i*3 + 3));
+    }
+    
+    //Decoding to text
+    let text = "";
+    for (let i = 0; i < surfaceCode.length/3; i++){
+        let code = surfaceCode.substring(i*3, i*3 + 3);
+        let codeIndex = arrayPid.indexOf(code);
+        if (!arrayPid.includes(code)){
+            text += "xxx";
+        }
+        else{
+            text += letters[codeIndex];
+        }
+    }
+    return text;
 }
 
 // ========== P I D ========== //
@@ -167,7 +205,7 @@ function generatePID(){
     const max = 899;
 
     /*
-        Gerando números de 100 à 999 (inclui 999)
+        Gerando números de 100 à 899 (inclui 899)
         Verificando e pulando repetições
         Adicionando no vetor PID
     */
