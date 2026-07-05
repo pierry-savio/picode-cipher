@@ -65,52 +65,35 @@ if (encode_button != null){
     });
 }
 
+//Generate code: Text --> Surface code --> Deep code
 function encodeText(text){
-    //Generating the surface code
+    let surfaceCode = generateSurfaceCode(text);
+    let deepCode = generateDeepCode(surfaceCode);
+    return deepCode;
+}
+
+//Generating Surface code
+function generateSurfaceCode(text){
     let surfaceCode = "";
-    for (let i = 0; i<text.length; i++){
+
+    for (let i = 0; i < text.length; i++){
         let letter = text.substring(i, i+1);
         let letterIndex = letters.indexOf(letter);
-        let pid = localStorage.getItem("pid");
-        surfaceCode += pid.substring(letterIndex*3, letterIndex*3 + 3);
+        let code = localStorage.getItem("pid").substring(letterIndex*3, letterIndex*3 + 3);
+        surfaceCode += code;
     }
+    return surfaceCode;
+}
 
-    //Gererating the deep code
+//Generating Deep code
+function generateDeepCode(surfaceCode){
     let deepCode = "";
-    for (let i = 0; i<surfaceCode.length/3; i++){
 
-        //Current Pid
-        let indexPid = parseInt(surfaceCode.substring(i*3, i*3 + 3));
-        console.log("indexPid: " + indexPid);
-
-        //Number which will decrease the current pid
-        let substractor = Math.floor(Math.random() * 10);
-        console.log("substractor: " + substractor);
-
-        //Rest of the substraction
-        let consequence = indexPid-substractor;
-        console.log("consequence: " + consequence);
-
-        //Substractor + consequence
-        let code = parseInt(substractor + "" + consequence);
-        console.log("code: " + code);
-
-        //Formating the code
-        if (code < 10){
-            code = "00" + code;
-        }
-        else if (code >= 10 && code < 100){
-            code = "0" + code;
-        }
-        else{
-            code = String(code);
-        }
-        deepCode += code;
-        console.log("deepCode: " + deepCode);
-
-        console.log("");
-        console.log("------------------------");
-        console.log("");
+    for (let i = 0; i < surfaceCode.length/3; i++){
+        let code = parseInt(surfaceCode.substring(i*3, i*3 + 3));
+        let adder = Math.floor(Math.random() * (999 - (code + 100) + 1)) + (code + 100);
+        let filler = adder - code;
+        deepCode += adder + "" + filler;
     }
     return deepCode;
 }
@@ -134,6 +117,22 @@ if (decoder_input_file !== null){
     });
 }
 
+//Decode code
+const decode_button = document.getElementById("decode_button");
+const decoder_output = document.getElementById("decoder_output");
+
+if (decode_button !== null) {
+    decode_button.addEventListener("click", () =>{
+        decoder_output.value = decodeCode(decoder_input.value);
+    });
+}
+
+//Decoding code
+function decodeCode(code){
+    let decode = code;
+    return decode;
+}
+
 // ========== P I D ========== //
 const pid_button = document.getElementById("pid_button");
 const pid_input = document.getElementById("pid_input");
@@ -149,9 +148,9 @@ function loadSavedPid(){
 //Generate new PID button
 if (pid_button !== null){
     pid_button.addEventListener("click", () =>{
-        let formatedPID = formatPID(generatePID());
-        pid_input.value = formatedPID;
-        savePID(formatedPID);
+        let pid = generatePID();
+        pid_input.value = pid;
+        savePID(pid);
     });
 }
 
@@ -160,49 +159,34 @@ function savePID(PID){
     localStorage.setItem("pid", PID);
 }
 
-//Format PID
-function formatPID(PID){
-    let formatedPID = "";
-
-    for (let i = 0; i < PID.length; i++){
-        formatedPID += PID[i];
-    }
-    return formatedPID;
-}
-
 //Generate PID
 function generatePID(){
 
-    const PID = [];
-    const min = 1;
-    const max = letters.length;
+    let pid = [];
+    const min = 100;
+    const max = 899;
 
     /*
-        Gerando números de 001 à 122 (inclui 122)
+        Gerando números de 100 à 999 (inclui 999)
         Verificando e pulando repetições
         Adicionando no vetor PID
     */
     for (let i = 0; i < letters.length; i++){
-
         let number = Math.floor(Math.random() * (max - min + 1)) + min;
-        while (PID.includes(number)){
+        while (pid.includes(number)){
             number = Math.floor(Math.random() * (max - min + 1)) + min
         }
-        PID.push(number);
+        pid.push(number);
     }
 
-    for (let i = 0; i < PID.length; i++){
-        if (PID[i] < 10){
-            PID[i] = "00" + PID[i];
-        }
-        else if (PID[i] >= 10 && PID[i] < 100){
-            PID[i] = "0" + PID[i];
-        }
-        else{
-            PID[i] = String(PID[i]);
-        }
+    //Putting pid in a String
+    pidString = "";
+
+    for (let i = 0; i < pid.length; i++){
+        pidString += pid[i];
     }
-    return PID;
+
+    return pidString;
 }
 
 //Copy PID button
