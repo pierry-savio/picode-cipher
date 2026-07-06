@@ -604,6 +604,7 @@ div.popup-bg {
   transition: 0.5s ease;
 }
 div.popup-bg div.popup-container {
+  transform: scale(1);
   width: 90%;
   max-width: 600px;
   background-color: #1a1a24;
@@ -616,6 +617,7 @@ div.popup-bg div.popup-container {
   border-radius: 8px;
   border: 1px solid #26262f;
   box-shadow: 0 0 10px 0 black;
+  transition: 0.5s ease;
 }
 div.popup-bg div.popup-container h2 {
   font-family: "Space Grotesk", sans-serif;
@@ -690,6 +692,9 @@ div.popup-bg div.popup-container div.buttons-container button.maybe-later-button
 div.popup-bg.closed {
   opacity: 0;
   pointer-events: none;
+}
+div.popup-bg.closed div.popup-container {
+  transform: scale(0.5);
 }
 
 section.decoder div.section-header-container {
@@ -901,6 +906,7 @@ div.popup-bg {
   transition: 0.5s ease;
 }
 div.popup-bg div.popup-container {
+  transform: scale(1);
   width: 90%;
   max-width: 600px;
   background-color: #1a1a24;
@@ -913,6 +919,7 @@ div.popup-bg div.popup-container {
   border-radius: 8px;
   border: 1px solid #26262f;
   box-shadow: 0 0 10px 0 black;
+  transition: 0.5s ease;
 }
 div.popup-bg div.popup-container h2 {
   font-family: "Space Grotesk", sans-serif;
@@ -987,6 +994,9 @@ div.popup-bg div.popup-container div.buttons-container button.maybe-later-button
 div.popup-bg.closed {
   opacity: 0;
   pointer-events: none;
+}
+div.popup-bg.closed div.popup-container {
+  transform: scale(0.5);
 }
 
 section.pid div.section-header-container {
