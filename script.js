@@ -61,7 +61,20 @@ const encoder_output = document.getElementById("encoder_output");
 
 if (encode_button != null){
     encode_button.addEventListener("click", () =>{
-        encoder_output.value = encodeText(encoder_input.value);
+        //Checking if is there a PID
+        if
+        (
+            localStorage.getItem("pid") === ""        || 
+            localStorage.getItem("pid") === null      ||
+            localStorage.getItem("pid") === undefined
+        )
+        {
+            encoder_popup_bg.classList.remove("closed");
+        }
+        else{
+            encoder_output.value = encodeText(encoder_input.value);
+            encode_button.textContent = "CÓDIGO GERADO!";
+        }
     });
 }
 
@@ -125,6 +138,16 @@ if (encoder_download_button !== null){
     });
 }
 
+//Popup close
+const encoder_maybe_later_button = document.getElementById("encoder_maybe_later_button");
+const encoder_popup_bg = document.getElementById("encoder_popup_bg");
+
+if (encoder_maybe_later_button !== null){
+    encoder_maybe_later_button.addEventListener('click', () =>{
+        encoder_popup_bg.classList.toggle("closed");
+    });
+}
+
 // ========== D E C O D E ========== //
 
 //Upload file
@@ -150,7 +173,21 @@ const decoder_output = document.getElementById("decoder_output");
 
 if (decode_button !== null) {
     decode_button.addEventListener("click", () =>{
-        decoder_output.value = decodeCode(decoder_input.value);
+        
+        //Checking if is there a PID
+        if
+        (
+            localStorage.getItem("pid") === ""        || 
+            localStorage.getItem("pid") === null      ||
+            localStorage.getItem("pid") === undefined
+        )
+        {
+            decoder_popup_bg.classList.remove("closed");
+        }
+        else{
+            decoder_output.value = decodeCode(decoder_input.value);
+            decode_button.textContent = "CÓDIGO DECODIFICADO!";
+        }
     });
 }
 
@@ -225,6 +262,16 @@ if (decoder_download_button !== null){
     });
 }
 
+//Popup close
+const decoder_maybe_later_button = document.getElementById("decoder_maybe_later_button");
+const decoder_popup_bg = document.getElementById("decoder_popup_bg");
+
+if (decoder_maybe_later_button !== null){
+    decoder_maybe_later_button.addEventListener('click', () =>{
+        decoder_popup_bg.classList.toggle("closed");
+    });
+}
+
 // ========== P I D ========== //
 const pid_button = document.getElementById("pid_button");
 const pid_input = document.getElementById("pid_input");
@@ -250,6 +297,7 @@ if (pid_button !== null){
         let pid = generatePID();
         pid_input.value = pid;
         savePID(pid);
+        pid_button.textContent = "PID GERADA!";
     });
 }
 

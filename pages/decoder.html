@@ -116,10 +116,12 @@
 
                     <textarea id="decoder_input" class="decoder-input" placeholder="Cole o código que deseja decodificar..."></textarea>
 
-                    <button class="decode-button" id="decode_button">DECODE</button>
+                    <a href="#decode_output">
+                        <button class="decode-button" id="decode_button">DECODE</button>
+                    </a>
                 </div>
 
-                <div class="output-container">
+                <div class="output-container" id="decode_output">
                     <div class="information-container">
                         <p>• Saída</p>
                         <p>texto original</p>
@@ -143,6 +145,20 @@
 
         </section>
     </main>
+
+    <div class="popup-bg closed" id="decoder_popup_bg">
+        <div class="popup-container">
+            <h2>CRIE SUA PID</h2>
+            <p>Crie uma chave PID antes de começar a decodificar</p>
+
+            <div class="buttons-container">
+                <a href="generate_pid.html">
+                    <button class="generate-pid-button">GERAR PID</button>
+                </a>
+                <button class="maybe-later-button" id="decoder_maybe_later_button">Talvez depois...</button>
+            </div>
+        </div>
+    </div>
 
     <script src="../script.js"></script>
 </body>

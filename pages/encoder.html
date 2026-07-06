@@ -116,10 +116,12 @@
 
                     <textarea id="encoder_input" class="encoder-input" placeholder="Cole o texto que deseja codificar..."></textarea>
 
-                    <button class="encode-button" id="encode_button">ENCODE</button>
+                    <a href="#encode_output">
+                        <button class="encode-button" id="encode_button">ENCODE</button>
+                    </a>
                 </div>
 
-                <div class="output-container">
+                <div class="output-container" id="encode_output">
                     <div class="information-container">
                         <p>• Saída</p>
                         <p>Codificado</p>
@@ -143,6 +145,20 @@
 
         </section>
     </main>
+
+    <div class="popup-bg closed" id="encoder_popup_bg">
+        <div class="popup-container">
+            <h2>CRIE SUA PID</h2>
+            <p>Crie uma chave PID antes de começar a codificar</p>
+
+            <div class="buttons-container">
+                <a href="generate_pid.html">
+                    <button class="generate-pid-button">GERAR PID</button>
+                </a>
+                <button class="maybe-later-button" id="encoder_maybe_later_button">Talvez depois...</button>
+            </div>
+        </div>
+    </div>
 
     <script src="../script.js"></script>
 </body>

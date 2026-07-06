@@ -6,6 +6,10 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 header.header-mobile {
   font-family: "Space Grotesk", sans-serif;
   font-optical-sizing: auto;
@@ -514,7 +518,12 @@ section.encoder div.encoder-container div.input-container textarea.encoder-input
 section.encoder div.encoder-container div.input-container textarea.encoder-input::placeholder, section.encoder div.encoder-container div.output-container textarea.encoder-input::placeholder, section.encoder div.encoder-container div.output-container textarea.encoder-output::placeholder {
   color: #5e5c69;
 }
-section.encoder div.encoder-container div.input-container button.encode-button, section.encoder div.encoder-container div.output-container button.encode-button {
+section.encoder div.encoder-container div.input-container a, section.encoder div.encoder-container div.output-container a {
+  list-style: none;
+  font-style: none;
+  text-decoration: none;
+}
+section.encoder div.encoder-container div.input-container a button.encode-button, section.encoder div.encoder-container div.output-container a button.encode-button {
   cursor: pointer;
   width: 100%;
   border-radius: 8px;
@@ -531,11 +540,11 @@ section.encoder div.encoder-container div.input-container button.encode-button, 
   background-color: #ff2db0;
   box-shadow: 0 6px 10px 0 rgba(255, 45, 176, 0.2);
 }
-section.encoder div.encoder-container div.input-container button.encode-button:hover, section.encoder div.encoder-container div.output-container button.encode-button:hover {
+section.encoder div.encoder-container div.input-container a button.encode-button:hover, section.encoder div.encoder-container div.output-container a button.encode-button:hover {
   box-shadow: 0 6px 10px 0 rgba(255, 45, 176, 0.6);
   transform: translateY(-2px);
 }
-section.encoder div.encoder-container div.input-container button.encode-button:active, section.encoder div.encoder-container div.output-container button.encode-button:active {
+section.encoder div.encoder-container div.input-container a button.encode-button:active, section.encoder div.encoder-container div.output-container a button.encode-button:active {
   box-shadow: 0 6px 10px 0 rgba(255, 45, 176, 0.2);
   transform: translateY(0px);
 }
@@ -577,6 +586,110 @@ section.encoder div.encoder-container div.output-container div.save-buttons-cont
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
+}
+
+div.popup-bg {
+  opacity: 1;
+  pointer-events: auto;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s ease;
+}
+div.popup-bg div.popup-container {
+  width: 90%;
+  max-width: 600px;
+  background-color: #1a1a24;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 30px;
+  border-radius: 8px;
+  border: 1px solid #26262f;
+  box-shadow: 0 0 10px 0 black;
+}
+div.popup-bg div.popup-container h2 {
+  font-family: "Space Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-weight: 700;
+  color: white;
+  font-size: 30px;
+  letter-spacing: 3px;
+}
+div.popup-bg div.popup-container p {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  color: #8b8997;
+  font-weight: 400;
+  text-align: center;
+  font-size: 16px;
+}
+div.popup-bg div.popup-container div.buttons-container {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+  width: 100%;
+}
+div.popup-bg div.popup-container div.buttons-container a button.generate-pid-button {
+  cursor: pointer;
+  width: 100%;
+  border-radius: 50px;
+  border: none;
+  font-family: "JetBrains Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  color: white;
+  font-weight: 500;
+  padding: 14px;
+  font-size: 16px;
+  transition: 0.2s ease;
+  background-color: #ff2db0;
+  box-shadow: 0 6px 10px 0 rgba(255, 45, 176, 0.2);
+}
+div.popup-bg div.popup-container div.buttons-container a button.generate-pid-button:hover {
+  box-shadow: 0 6px 10px 0 rgba(255, 45, 176, 0.6);
+  transform: translateY(-2px);
+}
+div.popup-bg div.popup-container div.buttons-container a button.generate-pid-button:active {
+  box-shadow: 0 6px 10px 0 rgba(255, 45, 176, 0.2);
+  transform: translateY(0px);
+}
+div.popup-bg div.popup-container div.buttons-container button.maybe-later-button {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 50px;
+  background-color: transparent;
+  border: 1px solid #26262f;
+  color: #8b8997;
+  transition: 0.2s ease;
+}
+div.popup-bg div.popup-container div.buttons-container button.maybe-later-button:hover {
+  border: 1px solid white;
+  color: white;
+}
+div.popup-bg div.popup-container div.buttons-container button.maybe-later-button:active {
+  border: 1px solid #26262f;
+  color: #8b8997;
+}
+
+div.popup-bg.closed {
+  opacity: 0;
+  pointer-events: none;
 }
 
 section.decoder div.section-header-container {
@@ -702,7 +815,12 @@ section.decoder div.decoder-container div.input-container textarea.decoder-input
 section.decoder div.decoder-container div.input-container textarea.decoder-input::placeholder, section.decoder div.decoder-container div.output-container textarea.decoder-input::placeholder, section.decoder div.decoder-container div.output-container textarea.decoder-output::placeholder {
   color: #5e5c69;
 }
-section.decoder div.decoder-container div.input-container button.decode-button, section.decoder div.decoder-container div.output-container button.decode-button {
+section.decoder div.decoder-container div.input-container a, section.decoder div.decoder-container div.output-container a {
+  list-style: none;
+  font-style: none;
+  text-decoration: none;
+}
+section.decoder div.decoder-container div.input-container a button.decode-button, section.decoder div.decoder-container div.output-container a button.decode-button {
   cursor: pointer;
   width: 100%;
   border-radius: 8px;
@@ -719,11 +837,11 @@ section.decoder div.decoder-container div.input-container button.decode-button, 
   background-color: #ff2db0;
   box-shadow: 0 6px 10px 0 rgba(255, 45, 176, 0.2);
 }
-section.decoder div.decoder-container div.input-container button.decode-button:hover, section.decoder div.decoder-container div.output-container button.decode-button:hover {
+section.decoder div.decoder-container div.input-container a button.decode-button:hover, section.decoder div.decoder-container div.output-container a button.decode-button:hover {
   box-shadow: 0 6px 10px 0 rgba(255, 45, 176, 0.6);
   transform: translateY(-2px);
 }
-section.decoder div.decoder-container div.input-container button.decode-button:active, section.decoder div.decoder-container div.output-container button.decode-button:active {
+section.decoder div.decoder-container div.input-container a button.decode-button:active, section.decoder div.decoder-container div.output-container a button.decode-button:active {
   box-shadow: 0 6px 10px 0 rgba(255, 45, 176, 0.2);
   transform: translateY(0px);
 }
@@ -765,6 +883,110 @@ section.decoder div.decoder-container div.output-container div.save-buttons-cont
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
+}
+
+div.popup-bg {
+  opacity: 1;
+  pointer-events: auto;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s ease;
+}
+div.popup-bg div.popup-container {
+  width: 90%;
+  max-width: 600px;
+  background-color: #1a1a24;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 30px;
+  border-radius: 8px;
+  border: 1px solid #26262f;
+  box-shadow: 0 0 10px 0 black;
+}
+div.popup-bg div.popup-container h2 {
+  font-family: "Space Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-weight: 700;
+  color: white;
+  font-size: 30px;
+  letter-spacing: 3px;
+}
+div.popup-bg div.popup-container p {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  color: #8b8997;
+  font-weight: 400;
+  text-align: center;
+  font-size: 16px;
+}
+div.popup-bg div.popup-container div.buttons-container {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+  width: 100%;
+}
+div.popup-bg div.popup-container div.buttons-container a button.generate-pid-button {
+  cursor: pointer;
+  width: 100%;
+  border-radius: 50px;
+  border: none;
+  font-family: "JetBrains Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  color: white;
+  font-weight: 500;
+  padding: 14px;
+  font-size: 16px;
+  transition: 0.2s ease;
+  background-color: #ff2db0;
+  box-shadow: 0 6px 10px 0 rgba(255, 45, 176, 0.2);
+}
+div.popup-bg div.popup-container div.buttons-container a button.generate-pid-button:hover {
+  box-shadow: 0 6px 10px 0 rgba(255, 45, 176, 0.6);
+  transform: translateY(-2px);
+}
+div.popup-bg div.popup-container div.buttons-container a button.generate-pid-button:active {
+  box-shadow: 0 6px 10px 0 rgba(255, 45, 176, 0.2);
+  transform: translateY(0px);
+}
+div.popup-bg div.popup-container div.buttons-container button.maybe-later-button {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 50px;
+  background-color: transparent;
+  border: 1px solid #26262f;
+  color: #8b8997;
+  transition: 0.2s ease;
+}
+div.popup-bg div.popup-container div.buttons-container button.maybe-later-button:hover {
+  border: 1px solid white;
+  color: white;
+}
+div.popup-bg div.popup-container div.buttons-container button.maybe-later-button:active {
+  border: 1px solid #26262f;
+  color: #8b8997;
+}
+
+div.popup-bg.closed {
+  opacity: 0;
+  pointer-events: none;
 }
 
 section.pid div.section-header-container {
