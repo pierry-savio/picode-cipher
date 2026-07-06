@@ -98,6 +98,33 @@ function generateDeepCode(surfaceCode){
     return deepCode;
 }
 
+//Copy and download encode
+const encoder_copy_button = document.getElementById("encoder_copy_button");
+const encoder_download_button = document.getElementById("encoder_download_button");
+
+//Copy
+if (encoder_copy_button !== null){
+    encoder_copy_button.addEventListener('click', async () =>{
+        await navigator.clipboard.writeText(encoder_output.value);
+        encoder_copy_button.textContent = "Copiado!";
+    });
+}
+
+//Download
+if (encoder_download_button !== null){
+    encoder_download_button.addEventListener('click', () =>{
+        const blob = new Blob([encoder_output.value], { type: 'text/plain' });
+
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = 'code.txt';
+        link.click();
+
+        URL.revokeObjectURL(link.href);
+        download_pid_button.textContent = "Baixado!";
+    });
+}
+
 // ========== D E C O D E ========== //
 
 //Upload file
@@ -171,9 +198,43 @@ function decodeToText(surfaceCode){
     return text;
 }
 
+//Copy and download encode
+const decoder_copy_button = document.getElementById("decoder_copy_button");
+const decoder_download_button = document.getElementById("decoder_download_button");
+
+//Copy
+if (decoder_copy_button !== null){
+    decoder_copy_button.addEventListener('click', async () =>{
+        await navigator.clipboard.writeText(decoder_output.value);
+        decoder_copy_button.textContent = "Copiado!";
+    });
+}
+
+//Download
+if (decoder_download_button !== null){
+    decoder_download_button.addEventListener('click', () =>{
+        const blob = new Blob([decoder_output.value], { type: 'text/plain' });
+
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = 'decode.txt';
+        link.click();
+
+        URL.revokeObjectURL(link.href);
+        download_pid_button.textContent = "Baixado!";
+    });
+}
+
 // ========== P I D ========== //
 const pid_button = document.getElementById("pid_button");
 const pid_input = document.getElementById("pid_input");
+
+if (pid_input !== null){
+    pid_input.addEventListener('input', () =>{
+        savePID(pid_input.value);
+        loadSavedPid();
+    });
+}
 
 //Load PID saved on local storage
 loadSavedPid();
@@ -231,7 +292,7 @@ function generatePID(){
 const copy_pid_button = document.getElementById("copy_pid_button");
 
 if (copy_pid_button !== null) {
-    copy_pid_button.addEventListener("click", async () =>{
+    copy_pid_button.addEventListener('click', async () =>{
         await navigator.clipboard.writeText(pid_input.value);
         copy_pid_button.textContent = "Copiado!";
     });
