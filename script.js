@@ -294,10 +294,21 @@ function loadSavedPid(){
 //Generate new PID button
 if (pid_button !== null){
     pid_button.addEventListener("click", () =>{
-        let pid = generatePID();
-        pid_input.value = pid;
-        savePID(pid);
-        pid_button.textContent = "PID GERADA!";
+        if
+        (
+            localStorage.getItem("pid") === ""        || 
+            localStorage.getItem("pid") === null      ||
+            localStorage.getItem("pid") === undefined
+        )
+        {
+            let pid = generatePID();
+            pid_input.value = pid;
+            savePID(pid);
+            pid_button.textContent = "PID GERADA!";
+        }
+        else{
+            pid_popup_bg.classList.remove('closed');
+        }
     });
 }
 
@@ -364,3 +375,32 @@ if (download_pid_button !== null){
         download_pid_button.textContent = "Baixado!";
     });
 }
+
+//Popup
+const pid_back_button = document.getElementById("pid_back_button");
+const pid_replace_button = document.getElementById("pid_replace_button");
+const pid_popup_bg = document.getElementById("pid_popup_bg");
+
+if (pid_back_button != null){
+    pid_back_button.addEventListener('click', () =>{
+        pid_popup_bg.classList.add('closed');
+    });
+}
+
+if (pid_replace_button != null){
+    pid_replace_button.addEventListener('click', () =>{
+        let pid = generatePID();
+        pid_input.value = pid;
+        savePID(pid);
+        pid_button.textContent = "PID GERADA!";
+        pid_popup_bg.classList.add('closed');
+    });
+}
+
+
+/*
+    let pid = generatePID();
+    pid_input.value = pid;
+    savePID(pid);
+    pid_button.textContent = "PID GERADA!";
+*/

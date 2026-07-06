@@ -103,8 +103,7 @@
                 @include font-title();
                 font-weight: 700;
                 color: white;
-                font-size: 30px;
-                letter-spacing: 3px;
+                font-size: 27px;
             }
 
             p{
@@ -121,10 +120,8 @@
                 gap: 10px;
                 width: 100%;
 
-                a{
-                    button.generate-pid-button{
-                        @include highlightButton(16px, 50px);
-                    }
+                button.generate-pid-button{
+                    @include highlightButton(16px, 50px);
                 }
 
                 button.maybe-later-button{
@@ -135,6 +132,7 @@
                     background-color: transparent;
                     border: 1px solid $line;
                     color: $muted;
+                    cursor: pointer;
 
                     transition: 0.2s ease;
 
@@ -148,7 +146,13 @@
                         color: $muted;
                     }
                 }
-            }   
+            }
+            
+            @media (min-width: 1200px){
+                h2{
+                    font-size: 46px;
+                }
+            }
         }
     }
 
