@@ -34,11 +34,11 @@ Para decodificar, o processo é revertido: o Deep Code é reduzido ao Surface Co
 
 ## 🚀 Como usar
 
-1. Acesse a página **Gerar PID** e clique em **GERAR NOVA PID** para criar sua chave pessoal (ela é salva automaticamente no seu navegador).
+1. Acesse a página [Gerar PID](https://picode-cipher.netlify.app/pages/generate_pid) e clique em **GERAR NOVA PID** para criar sua chave pessoal (ela é salva automaticamente no seu navegador).
 2. Guarde essa PID em um local seguro — ela é a única forma de decodificar suas mensagens depois.
-3. Na página **Encoder**, digite ou envie um arquivo `.txt` com o texto desejado e clique em codificar.
+3. Na página [Encoder](https://picode-cipher.netlify.app/pages/encoder), digite ou envie um arquivo `.txt` com o texto desejado e clique em codificar.
 4. Copie ou baixe o código gerado e compartilhe com quem também tiver a mesma PID.
-5. Na página **Decoder**, cole o código recebido para recuperar o texto original.
+5. Na página [Decoder](https://picode-cipher.netlify.app/pages/decoder), cole o código recebido para recuperar o texto original.
 
 ## 🛠️ Tecnologias
 
